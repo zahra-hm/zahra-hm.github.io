@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zahra Mohamed - Major Research Paper PDF">
+    <meta name="author" content="Zahra Mohamed">
+    <title>My Thesis</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div id="sideMenu"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="index.html#projects">Back to Portfolio</a>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="display-4">My Thesis</h1>
+        <p class="lead">This is the full text of my thesis. You can view it below or download it directly.</p>
+
+        <!-- Embedded PDF Viewer -->
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="pdfs/Mohamed%20-%20MRP%20-%20final.pdf" type="application/pdf" width="100%" height="600px">
+                Your browser does not support PDF viewing. <a href="pdfs/Mohamed%20-%20MRP%20-%20final.pdf">Download the PDF</a>.
+            </iframe>
+        </div>
+    </div>
+
+    <footer class="mt-5">
+        <p>&copy; 2024 Zahra Mohamed</p>
+    </footer>
+
+      <!--  Side Menu -->
+      <script>
+        fetch('sidemenu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sideMenu').innerHTML = data;
+            });
+    </script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>
