@@ -11,25 +11,26 @@ body {
 
 /* Header Styling */
 
+/* Transparent Header */
 header {
     position: fixed;
-    top: 30px; /* Below the WIP banner */
+    top: 30px; /* Keeps it below the WIP banner */
     left: 0;
     width: 100%;
-    background: rgba(20, 50, 20, 0.95); /* Dark green */
+    background: rgba(0, 0, 0, 0.2); /* Semi-transparent black */
+    backdrop-filter: blur(5px); /* Subtle blur effect */
     color: white;
     z-index: 1000;
-    padding: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Ensures left and right alignment */
     align-items: center;
-    flex-wrap: wrap;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    padding: 1rem 2rem; /* Adjust padding */
+    box-sizing: border-box; /* Prevents overflow */
     max-width: 100%;
-    overflow: hidden;
+    border-bottom: none; /* No separator line */
 }
 
-/* Ensure header container resizes properly */
+/* Header Container */
 .header-container {
     display: flex;
     align-items: center;
@@ -37,19 +38,28 @@ header {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0;
 }
 
-/* Navigation Styling */
+/* Name on the Left */
+header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #6FCF97; /* Soft green */
+    letter-spacing: 2px;
+    margin: 0; /* Prevents unnecessary space */
+}
+
+/* Navigation Menu (Aligned Right) */
+nav {
+    margin-left: auto; /* Pushes the menu to the right */
+}
+
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap; /* Prevents overflow */
-    justify-content: flex-end; /* Aligns items to the right */
-    max-width: 100%;
+    gap: 1.5rem; /* Spacing between menu items */
 }
 
 nav ul li {
@@ -57,20 +67,55 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1rem;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     transition: background-color 0.3s ease, color 0.3s ease;
-    white-space: nowrap; /* Prevents text wrapping */
+    color: #E0E0E0; /* Light grey for contrast */
+    white-space: nowrap; /* Prevents text from breaking */
 }
 
 /* Hover Effect */
 nav ul li a:hover {
-    background-color: #6FCF97;
-    color: black;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #FFD700; /* Gold */
+}
+
+/* Responsive Fixes */
+@media (max-width: 1024px) {
+    header {
+        padding: 0.8rem 1rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav {
+        margin-left: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
 }
 
 
@@ -231,18 +276,3 @@ body {
 }
 
 
-/* Further adjustments for small laptop screens */
-@media (max-width: 1024px) {
-    header {
-        padding: 0.8rem;
-    }
-
-    nav ul {
-        gap: 0.8rem;
-    }
-
-    nav ul li a {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.8rem;
-    }
-}
