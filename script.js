@@ -20,7 +20,7 @@ cardData.forEach((card) => {
     modal.className = 'modal';
     modal.innerHTML = `
         <div class="modal-content">
-            <button class="close" onclick="closeModal('modal${card.id}')">&times;</button>
+            <button class="close" data-modal-id="modal${card.id}">&times;</button>
             <img src="${card.image}" alt="${card.title}">
             <hr class="divider">
             <h3>${card.title}</h3>
@@ -45,3 +45,11 @@ function closeModal(id) {
         modal.style.display = 'none';
     }
 }
+
+// Attach event listeners to all close buttons **AFTER** modals are created
+document.addEventListener("click", (event) => {
+    if (event.target.classList.contains("close")) {
+        const modalId = event.target.getAttribute("data-modal-id");
+        closeModal(modalId);
+    }
+});
