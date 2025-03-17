@@ -10,15 +10,9 @@
 }
 
 .resume-container h2 {
-  color: forestgreen;
+  color: #6FCF97; /* Light green */
   font-size: 2rem;
   margin-bottom: 10px;
-}
-
-.resume-description {
-  font-size: 1.1rem;
-  color: #ddd;
-  margin-bottom: 20px;
 }
 
 /* Resume & Paper Buttons */
@@ -27,7 +21,7 @@
   padding: 12px 20px;
   font-size: 1.2rem;
   font-weight: bold;
-  background-color: forestgreen;
+  background-color: #6FCF97; /* Light green */
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -35,13 +29,9 @@
   transition: background 0.3s ease-in-out, transform 0.2s;
 }
 
-.resume-link i, .paper-link i {
-  margin-right: 8px;
-}
-
 .resume-link:hover, .paper-link:hover {
   background: white;
-  color: forestgreen;
+  color: #6FCF97;
   transform: scale(1.05);
 }
 
