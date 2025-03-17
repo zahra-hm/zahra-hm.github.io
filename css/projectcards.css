@@ -1,62 +1,94 @@
-/* Portfolio Section */
-.portfolio-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusts number of columns based on screen size */
-    gap: 1.5rem; /* Even spacing between cards */
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-}
-
-/* Portfolio Cards */
-.portfolio-card {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    background: #222;
-    border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-/* Card Images */
-.portfolio-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Hover Effect */
-.portfolio-card:hover {
-    transform: scale(1.05); /* Slight zoom effect */
-    box-shadow: 0 6px 15px rgba(0, 255, 127, 0.4); /* Forest green glow */
-}
-
-/* Hover Overlay for Card Titles */
-.portfolio-card .card-content {
-    position: absolute;
-    bottom: 0;
+/* MODAL STYLING */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
     left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.75); /* Light transparent overlay */
-    color: black;
-    padding: 1rem;
-    text-align: center;
-    font-size: 1.2rem;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
 
-/* Show Title on Hover */
-.portfolio-card:hover .card-content {
+/* Show modal smoothly */
+.modal.active {
     opacity: 1;
 }
 
-/* Responsive Design */
+/* Modal Content */
+.modal-content {
+    background: #fff;
+    padding: 2rem;
+    text-align: center;
+    max-width: 500px;
+    width: 80%;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 255, 127, 0.3);
+    border-radius: 10px;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* When active, smoothly appear */
+.modal.active .modal-content {
+    transform: translateY(0);
+}
+
+/* Modal Image */
+.modal-content img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1rem;
+}
+
+/* Divider Line */
+.divider {
+    border: none;
+    border-top: 2px solid forestgreen;
+    margin: 1rem 0;
+}
+
+/* Modal Text */
+.modal-text h3 {
+    font-size: 1.8rem;
+    color: forestgreen;
+    margin-bottom: 10px;
+}
+
+.modal-text p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out;
+}
+
+.close:hover {
+    transform: scale(1.2);
+    color: forestgreen;
+}
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
-    .portfolio-container {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    .modal-content {
+        width: 90%;
+        padding: 1.5rem;
     }
 }
