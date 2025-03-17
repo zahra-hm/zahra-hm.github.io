@@ -231,15 +231,17 @@ nav ul li a:hover {
 }
 
 /* Footer */
-footer {
-    background: rgba(0, 0, 0, 0.95);
-    color: white;
+
+.signature {
+    font-size: 0.8rem;  /* Small text */
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.6); /* Slightly transparent white */
     text-align: center;
-    padding: 1rem 0;
-    font-size: 0.9rem;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    padding: 10px;
+    background: none !important;
 }
-/* Work in Progress Banner */
+
 
 
 /* Work in Progress Banner */
@@ -286,5 +288,6 @@ footer {
 body {
     padding-top: 90px; /* Adjust based on banner height */
 }
+
 
 
