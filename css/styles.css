@@ -96,25 +96,49 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 2rem auto;
+    flex-wrap: wrap;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background: rgba(34, 34, 34, 0.9); /* Darker background for contrast */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     text-align: left;
+}
+/* About Image */
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .profile-photo {
-    background-image: url("../img/profile.jpg");
-    width: 150px;
-    height: 150px;
-    background-size: cover;
-    background-position: center;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+    object-fit: cover;
+    border: 3px solid forestgreen;
 }
 
 
+/* About Text */
+.about-text {
+    flex: 2;
+    max-width: 600px;
+}
+
 .about-text h2 {
     color: forestgreen;
-    font-size: 1.8rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ddd;
 }
 
 /* Portfolio Cards */

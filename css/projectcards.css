@@ -1,48 +1,62 @@
-/* General card styling */
-.project-card {
+/* Portfolio Section */
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusts number of columns based on screen size */
+    gap: 1.5rem; /* Even spacing between cards */
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Portfolio Cards */
+.portfolio-card {
     position: relative;
-    width: 100%;
-    height: 250px;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    background: #222;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.project-card img {
+/* Card Images */
+.portfolio-card img {
     width: 100%;
-    height: 100%;
+    height: 250px;
     object-fit: cover;
-    transition: transform 0.3s ease, filter 0.3s ease;
+    display: block;
+    transition: transform 0.3s ease-in-out;
 }
 
-.project-card:hover img {
-    filter: brightness(50%);
-    transform: scale(1.05);
+/* Hover Effect */
+.portfolio-card:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 6px 15px rgba(0, 255, 127, 0.4); /* Forest green glow */
 }
 
-/* Overlay with text */
-.card-overlay {
+/* Hover Overlay for Card Titles */
+.portfolio-card .card-content {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.75); /* Light transparent overlay */
+    color: black;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease-in-out;
 }
 
-.project-card:hover .card-overlay {
+/* Show Title on Hover */
+.portfolio-card:hover .card-content {
     opacity: 1;
 }
 
-/* Text on hover */
-.card-text {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .portfolio-container {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
 }
