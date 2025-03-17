@@ -256,6 +256,7 @@ footer {
     z-index: 1100; /* Ensure it stays above everything */
 }
 
+
 /* Prevent header from being covered */
 body {
     padding-top: 90px; /* Adjust based on banner height */
