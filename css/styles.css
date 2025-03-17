@@ -241,20 +241,6 @@ footer {
 }
 /* Work in Progress Banner */
 
-.wip-banner {
-    background: rgba(255, 165, 0, 0.9); /* Orange background */
-    color: black;
-    text-align: center;
-    padding: 5px 0; /* Keeps it minimal */
-    font-size: 0.9rem;
-    font-weight: bold;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1100; /* Ensures it stays above everything */
-}
-
 
 .wip-banner {
     background: rgba(255, 165, 0, 0.9); /* Orange background */
