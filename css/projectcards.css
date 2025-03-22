@@ -24,13 +24,27 @@
     background: #fff;
     padding: 2rem;
     text-align: center;
-    max-width: 500px;
-    width: 80%;
+    max-width: 600px;
+    max-height: 90vh; /* Prevent content from going off screen */
+    width: 90%;
+    overflow-y: auto; /* Make modal scrollable if content is too long */
     position: relative;
     box-shadow: 0 5px 15px rgba(0, 255, 127, 0.3);
     border-radius: 10px;
     transform: translateY(-20px);
     transition: transform 0.3s ease-in-out;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+}
+
+/* Customize scrollbar for WebKit */
+.modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 10px;
 }
 
 /* When active, smoothly appear */
@@ -55,15 +69,17 @@
 
 /* Modal Text */
 .modal-text h3 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: forestgreen;
     margin-bottom: 10px;
 }
 
 .modal-text p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #333;
     line-height: 1.6;
+    text-align: left;
+    padding: 0 0.5rem;
 }
 
 /* Close Button */
@@ -88,7 +104,8 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .modal-content {
-        width: 90%;
-        padding: 1.5rem;
+        width: 95%;
+        padding: 1.2rem;
+        font-size: 0.95rem;
     }
 }
