@@ -57,3 +57,15 @@ document.addEventListener("click", (event) => {
         closeModal(modalId);
     }
 });
+
+// Close modal if user clicks outside the modal content
+window.addEventListener('click', function (e) {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            modal.classList.remove('active');
+        }
+    });
+});
+
