@@ -3,15 +3,13 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 5px;
-    padding-top: 90px; /* Makes space for the fixed elements */
+    padding-top: 90px; /* Ensures fixed elements don't cover content */
     background: #0F1F0F; /* Dark greenish background */
     color: white;
     line-height: 1.6;
 }
 
 /* Header Styling */
-
-/* Transparent Header */
 header {
     position: fixed;
     top: 30px; /* Keeps it below the WIP banner */
@@ -22,12 +20,10 @@ header {
     color: white;
     z-index: 1000;
     display: flex;
-    justify-content: space-between; /* Ensures left and right alignment */
+    justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem; /* Adjust padding */
-    box-sizing: border-box; /* Prevents overflow */
-    max-width: 100%;
-    border-bottom: none; /* No separator line */
+    padding: 1rem 2rem;
+    box-sizing: border-box;
 }
 
 /* Header Container */
@@ -46,90 +42,9 @@ header h1 {
     font-weight: bold;
     color: #6FCF97; /* Soft green */
     letter-spacing: 2px;
-    margin: 0; /* Prevents unnecessary space */
-}
-
-/* Navigation Menu (Aligned Right) */
-nav {
-    margin-left: auto; /* Pushes the menu to the right */
-}
-
-nav ul {
-    list-style: none;
     margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 1.5rem; /* Spacing between menu items */
 }
 
-nav ul li {
-    display: inline-block;
-}
-
-nav ul li a {
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    color: #E0E0E0; /* Light grey for contrast */
-    white-space: nowrap; /* Prevents text from breaking */
-}
-
-/* Hover Effect */
-nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: #FFD700; /* Gold */
-}
-
-/* Responsive Fixes */
-@media (max-width: 1024px) {
-    header {
-        padding: 0.8rem 1rem;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: flex-end;
-    }
-
-    nav ul li a {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.8rem;
-    }
-}
-
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    nav {
-        margin-left: 0;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.8rem;
-    }
-}
-
-
-
-/* Sections */
-.section-container {
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    text-align: center;
-}
 
 /* About Section */
 .about-container {
@@ -179,7 +94,86 @@ nav ul li a:hover {
     color: #ddd;
 }
 
-/* Portfolio Container */
+
+/* Navigation Menu */
+nav {
+    margin-left: auto;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem; /* Space between items */
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #E0E0E0; /* Light grey */
+    white-space: nowrap;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #FFD700; /* Gold */
+}
+
+/* Work in Progress Banner */
+.wip-banner {
+    background: rgba(255, 165, 0, 0.9); /* Orange background */
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1100;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 5px 0;
+}
+
+/* Marquee Effect */
+.marquee-container {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.marquee-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scrollText 6s linear infinite; /* Faster scrolling */
+}
+
+@keyframes scrollText {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Sections */
+.section-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Portfolio Cards */
 .portfolio-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -231,63 +225,12 @@ nav ul li a:hover {
 }
 
 /* Footer */
-
 .signature {
-    font-size: 0.8rem;  /* Small text */
+    font-size: 0.8rem;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.6); /* Slightly transparent white */
+    color: rgba(255, 255, 255, 0.6);
     text-align: center;
     margin-top: 20px;
     padding: 10px;
     background: none !important;
 }
-
-
-
-/* Work in Progress Banner */
-.wip-banner {
-    background: rgba(255, 165, 0, 0.9); /* Orange background */
-    color: black;
-    font-size: 1rem;
-    font-weight: bold;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1100;
-    overflow: hidden; /* Prevents text from spilling over */
-    white-space: nowrap;
-    padding: 5px 0;
-}
-
-/* Marquee effect */
-.marquee-container {
-    display: flex;
-    width: 100%;
-    overflow: hidden;
-    white-space: wrap;
-}
-
-.marquee-text {
-    display: inline-block;
-    padding-left: 100%; /* Start from right */
-    animation: scrollText 10s linear infinite; /* Adjust speed */
-}
-
-@keyframes scrollText {
-    from {
-        transform: translateX(0%);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
-
-
-/* Prevent header from being covered */
-body {
-    padding-top: 90px; /* Adjust based on banner height */
-}
-
-
-
